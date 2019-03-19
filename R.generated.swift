@@ -16,27 +16,76 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
+    /// Image `forecast`.
+    static let forecast = Rswift.ImageResource(bundle: R.hostingBundle, name: "forecast")
     /// Image `nav_bar_back`.
     static let nav_bar_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "nav_bar_back")
+    /// Image `today`.
+    static let today = Rswift.ImageResource(bundle: R.hostingBundle, name: "today")
+    
+    /// `UIImage(named: "forecast", bundle: ..., traitCollection: ...)`
+    static func forecast(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.forecast, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "nav_bar_back", bundle: ..., traitCollection: ...)`
     static func nav_bar_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.nav_bar_back, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "today", bundle: ..., traitCollection: ...)`
+    static func today(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.today, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
+    /// Storyboard `ForecastModuleViewController`.
+    static let forecastModuleViewController = _R.storyboard.forecastModuleViewController()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `ParentTabBarModuleViewController`.
+    static let parentTabBarModuleViewController = _R.storyboard.parentTabBarModuleViewController()
+    /// Storyboard `TodayModuleViewController`.
+    static let todayModuleViewController = _R.storyboard.todayModuleViewController()
+    
+    /// `UIStoryboard(name: "ForecastModuleViewController", bundle: ...)`
+    static func forecastModuleViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.forecastModuleViewController)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "ParentTabBarModuleViewController", bundle: ...)`
+    static func parentTabBarModuleViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.parentTabBarModuleViewController)
+    }
+    
+    /// `UIStoryboard(name: "TodayModuleViewController", bundle: ...)`
+    static func todayModuleViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.todayModuleViewController)
     }
     
     fileprivate init() {}
@@ -62,7 +111,30 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try forecastModuleViewController.validate()
       try launchScreen.validate()
+      try parentTabBarModuleViewController.validate()
+      try todayModuleViewController.validate()
+    }
+    
+    struct forecastModuleViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = WeathermanNavigationController
+      
+      let bundle = R.hostingBundle
+      let forecastModuleViewController = StoryboardViewControllerResource<ForecastModuleViewController>(identifier: "ForecastModuleViewController")
+      let name = "ForecastModuleViewController"
+      
+      func forecastModuleViewController(_: Void = ()) -> ForecastModuleViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: forecastModuleViewController)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.forecastModuleViewController().forecastModuleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'forecastModuleViewController' could not be loaded from storyboard 'ForecastModuleViewController' as 'ForecastModuleViewController'.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -74,6 +146,46 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct parentTabBarModuleViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ParentTabBarModuleViewController
+      
+      let bundle = R.hostingBundle
+      let name = "ParentTabBarModuleViewController"
+      let parentTabBarModuleViewController = StoryboardViewControllerResource<ParentTabBarModuleViewController>(identifier: "ParentTabBarModuleViewController")
+      
+      func parentTabBarModuleViewController(_: Void = ()) -> ParentTabBarModuleViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: parentTabBarModuleViewController)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.parentTabBarModuleViewController().parentTabBarModuleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'parentTabBarModuleViewController' could not be loaded from storyboard 'ParentTabBarModuleViewController' as 'ParentTabBarModuleViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct todayModuleViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = WeathermanNavigationController
+      
+      let bundle = R.hostingBundle
+      let name = "TodayModuleViewController"
+      let todayModuleViewController = StoryboardViewControllerResource<TodayModuleViewController>(identifier: "TodayModuleViewController")
+      
+      func todayModuleViewController(_: Void = ()) -> TodayModuleViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: todayModuleViewController)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.todayModuleViewController().todayModuleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'todayModuleViewController' could not be loaded from storyboard 'TodayModuleViewController' as 'TodayModuleViewController'.") }
       }
       
       fileprivate init() {}

@@ -8,5 +8,7 @@
 
 class APIEndpoints {
 
-    static let baseURL = ""
+    static let baseURL = "https://api.openweathermap.org/data/2.5/"
+    static let currentWeatherURL = "weather"
+    static let forecastWeatherURL = "forecast"
 }

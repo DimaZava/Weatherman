@@ -8,10 +8,9 @@
 
 import UIKit
 
-class TodayModuleViewController: UIViewController {
+class TodayModuleViewController: WeathermanViewController {
 
     // MARK: - Outlets
-	//@IBOutlet weak private var tableView: UITableView!
 
     // MARK: - Constants
 
@@ -19,6 +18,9 @@ class TodayModuleViewController: UIViewController {
     var output: TodayModuleViewOutput!
 
     // MARK: - Overrides
+    override var barTitle: String? {
+        return "Today".localized()
+    }
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,15 +33,30 @@ class TodayModuleViewController: UIViewController {
         output.onViewWillAppear()
     }
 
+    deinit {
+        unsubscribe()
+    }
+
     // MARK: - Actions
 
     // MARK: - Other
+}
+
+// NARK: - WeatherObservable
+extension TodayModuleViewController: WeatherObservable {
+
+    func didObtainWeather() {
+    }
+
+    func onError() {
+    }
 }
 
 // MARK: - TodayModuleViewInput
 extension TodayModuleViewController: TodayModuleViewInput {
 
     func setupInitialState() {
+        subscribe()
     }
 
     func onViewWillAppear() {

@@ -7,24 +7,24 @@
 //
 
 import CoreLocation
-import Foundation
 
 protocol LocationServiceDelegate: AnyObject {
 
-    func didUpdateLocation()
-    func didFoundBeacons(_ beacons: [CLBeacon])
+    func didUpdateLocation(_ location: CLLocation)
 }
 
 class LocationService: NSObject {
 
-    private var manager: CLLocationManager?
-
-    weak var delegate: LocationServiceDelegate?
-
+    // MARK: - Static members
     static let sharedInstance = LocationService()
 
+    // MARK: - Properties
+    private var manager: CLLocationManager?
+    var latestLocation: CLLocation?
+    weak var delegate: LocationServiceDelegate?
     var onAuthorizationStatusChanged: ((_ status: CLAuthorizationStatus) -> Void)?
 
+    // MARK: - Lifecycle
     private override init() { }
 
     // MARK: - Common
@@ -32,18 +32,16 @@ class LocationService: NSObject {
 
         self.manager = CLLocationManager()
         if let manager = manager {
-
             manager.delegate = self
             onAuthorizationStatusChanged = completion
-            manager.requestAlwaysAuthorization()
+            manager.requestWhenInUseAuthorization() //requestAlwaysAuthorization()
         }
     }
 
     func locationServicesAvailable() -> Bool {
-        let authorizationStatus = CLLocationManager.authorizationStatus()
 
-        return CLLocationManager.locationServicesEnabled() &&
-            (authorizationStatus == .authorizedWhenInUse || authorizationStatus == .authorizedAlways)
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        return CLLocationManager.locationServicesEnabled() && authorizationStatus == .authorizedWhenInUse
     }
 
     // MARK: - Location
@@ -51,13 +49,11 @@ class LocationService: NSObject {
 
         guard locationServicesAvailable() else { return }
 
-        if CLLocationManager.authorizationStatus() == .authorizedAlways {
-            manager?.allowsBackgroundLocationUpdates = true
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            //manager?.allowsBackgroundLocationUpdates = true
             manager?.pausesLocationUpdatesAutomatically = true
         }
-        manager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        //manager?.distanceFilter = 100.0
-
+        manager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         manager?.startUpdatingLocation()
     }
 
@@ -69,7 +65,10 @@ class LocationService: NSObject {
 extension LocationService: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        delegate?.didUpdateLocation()
+        latestLocation = locations.first
+        if let location = latestLocation {
+            delegate?.didUpdateLocation(location)
+        }
     }
 
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
@@ -87,10 +86,10 @@ extension LocationService: CLLocationManagerDelegate {
                 Logger.log("location permission denied")
             } else {
                 Logger.log("location permission success")
-                if status == .authorizedAlways {
-                    manager.allowsBackgroundLocationUpdates = true
-                    manager.pausesLocationUpdatesAutomatically = true
-                }
+                //if status == .authorizedAlways {
+                    //manager.allowsBackgroundLocationUpdates = true
+                manager.pausesLocationUpdatesAutomatically = true
+                //}
             }
             onAuthorizationStatusChanged?(status)
             onAuthorizationStatusChanged = nil

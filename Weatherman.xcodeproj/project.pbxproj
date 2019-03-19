@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0595A7561A5018DC8698A916 /* ParentTabBarModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786CAE7BEE2F3B8AE33141A8 /* ParentTabBarModuleConfigurator.swift */; };
+		09F7935908FDF2F1F21516F5 /* ParentTabBarModuleInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BA7C80A096D926DB16379 /* ParentTabBarModuleInitializer.swift */; };
 		30C86FF81CAB9ED254261A37 /* TodayModuleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685C190CE59852F540779D /* TodayModuleViewOutput.swift */; };
+		3A77688A3FF564B4360A7C15 /* ParentTabBarModuleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3247548E6F1312193FDA7 /* ParentTabBarModuleViewOutput.swift */; };
 		42B51190B60CEDB053C6DEB9 /* ForecastModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964FCC1B717ADA7F4A3B9986 /* ForecastModuleViewController.swift */; };
 		4C56FFEB8AECF5BDFB4BD667 /* TodayModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FAC33E3872B95E583A17 /* TodayModuleViewController.swift */; };
 		58105BB4B83398C06FAB43B2 /* ForecastModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6C2BB1BBA518E283A4B4B /* ForecastModuleViewInput.swift */; };
 		5AEA068BAA290BCF5CBB41BD /* TodayModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD9453C9C1644F83A33DCA /* TodayModuleViewInput.swift */; };
 		5B9BA2501432B77E17D038D9 /* TodayModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798FC43B121733F6785F917 /* TodayModuleConfigurator.swift */; };
 		60CB01DB3658F1A9B48F83B6 /* TodayModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C33E27D5E88D50AB8A9842 /* TodayModulePresenter.swift */; };
+		72B9A5EBA3E76C0FFCDFD597 /* ParentTabBarModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B97CF19E0D2861DA7A1549 /* ParentTabBarModuleViewInput.swift */; };
 		CACF18DBA1E6AD7BCFF560CE /* Pods_Weatherman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C1B3E547C32C0B52293810 /* Pods_Weatherman.framework */; };
 		D71C86D1131D4CA78444CEDD /* ForecastModuleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58BCDBF46C847EDA68A67E8 /* ForecastModuleViewOutput.swift */; };
+		DC4604EB5B098BF1AF4E5682 /* ParentTabBarModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A493FD952FA6B67467506A /* ParentTabBarModuleViewController.swift */; };
 		E60525E022415685000AB425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60525DF22415685000AB425 /* AppDelegate.swift */; };
 		E60525E722415687000AB425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60525E622415687000AB425 /* Assets.xcassets */; };
 		E60525EA22415687000AB425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60525E822415687000AB425 /* LaunchScreen.storyboard */; };
@@ -30,24 +35,42 @@
 		E66369C822416D3C00CFF860 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369C722416D3C00CFF860 /* APIService.swift */; };
 		E66369CA2241704D00CFF860 /* WeathermanTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369C92241704D00CFF860 /* WeathermanTabBarController.swift */; };
 		E66369CD2241736900CFF860 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369CC2241736900CFF860 /* LocationService.swift */; };
+		E66369CF224175A100CFF860 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369CE224175A100CFF860 /* Storage.swift */; };
+		E66369D1224178CA00CFF860 /* ParentTabBarModuleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66369D0224178CA00CFF860 /* ParentTabBarModuleViewController.storyboard */; };
+		E66369D322417C6C00CFF860 /* TodayModuleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66369D222417C6C00CFF860 /* TodayModuleViewController.storyboard */; };
+		E66369D522417D1C00CFF860 /* ForecastModuleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66369D422417D1C00CFF860 /* ForecastModuleViewController.storyboard */; };
+		E66369D72241809700CFF860 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E66369D62241809700CFF860 /* GoogleService-Info.plist */; };
+		E66369D9224187F000CFF860 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369D8224187F000CFF860 /* WeatherService.swift */; };
+		E66369DC2241883900CFF860 /* WeatherObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369DB2241883900CFF860 /* WeatherObservable.swift */; };
+		E66369DE224193D100CFF860 /* WeathermanViewController+WeatherSubscribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369DD224193D100CFF860 /* WeathermanViewController+WeatherSubscribable.swift */; };
+		E66369E022419A4100CFF860 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369DF22419A4100CFF860 /* CurrentWeather.swift */; };
+		E66369E222419A4E00CFF860 /* DayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369E122419A4E00CFF860 /* DayWeather.swift */; };
+		E66369E422419C3F00CFF860 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369E322419C3F00CFF860 /* ServiceError.swift */; };
 		EE15376E0B9016CCBC4D908B /* ForecastModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E052332F586EAB3C2B869DB7 /* ForecastModulePresenter.swift */; };
+		F07524CB9A3AD5D7001E0D3F /* ParentTabBarModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD75DD5D75D537E570EA17 /* ParentTabBarModulePresenter.swift */; };
 		FCD41F3D7C28838488065EAB /* ForecastModuleInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82602AE2467F80938CD42835 /* ForecastModuleInitializer.swift */; };
 		FDFAF496BC57775066E757B4 /* ForecastModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6217A15E1D7DD65C171225F /* ForecastModuleConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ABD75DD5D75D537E570EA17 /* ParentTabBarModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParentTabBarModulePresenter.swift; sourceTree = "<group>"; };
 		1798FC43B121733F6785F917 /* TodayModuleConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModuleConfigurator.swift; sourceTree = "<group>"; };
 		21439E162DCE09FCA33B03DA /* TodayModuleInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModuleInitializer.swift; sourceTree = "<group>"; };
 		25FD9453C9C1644F83A33DCA /* TodayModuleViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModuleViewInput.swift; sourceTree = "<group>"; };
 		33685C190CE59852F540779D /* TodayModuleViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModuleViewOutput.swift; sourceTree = "<group>"; };
+		3D6BA7C80A096D926DB16379 /* ParentTabBarModuleInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParentTabBarModuleInitializer.swift; sourceTree = "<group>"; };
 		4CB2CBB65AA412BD2455F33D /* Pods-Weatherman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherman.release.xcconfig"; path = "Target Support Files/Pods-Weatherman/Pods-Weatherman.release.xcconfig"; sourceTree = "<group>"; };
 		622EEEE210570A355696D424 /* Pods-Weatherman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherman.debug.xcconfig"; path = "Target Support Files/Pods-Weatherman/Pods-Weatherman.debug.xcconfig"; sourceTree = "<group>"; };
 		69C33E27D5E88D50AB8A9842 /* TodayModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModulePresenter.swift; sourceTree = "<group>"; };
+		786CAE7BEE2F3B8AE33141A8 /* ParentTabBarModuleConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParentTabBarModuleConfigurator.swift; sourceTree = "<group>"; };
 		82602AE2467F80938CD42835 /* ForecastModuleInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModuleInitializer.swift; sourceTree = "<group>"; };
+		82A493FD952FA6B67467506A /* ParentTabBarModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParentTabBarModuleViewController.swift; sourceTree = "<group>"; };
 		964FCC1B717ADA7F4A3B9986 /* ForecastModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModuleViewController.swift; sourceTree = "<group>"; };
 		9EE1FAC33E3872B95E583A17 /* TodayModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModuleViewController.swift; sourceTree = "<group>"; };
+		B3B97CF19E0D2861DA7A1549 /* ParentTabBarModuleViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParentTabBarModuleViewInput.swift; sourceTree = "<group>"; };
 		B7C1B3E547C32C0B52293810 /* Pods_Weatherman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weatherman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E052332F586EAB3C2B869DB7 /* ForecastModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModulePresenter.swift; sourceTree = "<group>"; };
+		E0C3247548E6F1312193FDA7 /* ParentTabBarModuleViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParentTabBarModuleViewOutput.swift; sourceTree = "<group>"; };
 		E60525DC22415685000AB425 /* Weatherman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60525DF22415685000AB425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E60525E622415687000AB425 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +86,17 @@
 		E66369C722416D3C00CFF860 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E66369C92241704D00CFF860 /* WeathermanTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathermanTabBarController.swift; sourceTree = "<group>"; };
 		E66369CC2241736900CFF860 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		E66369CE224175A100CFF860 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		E66369D0224178CA00CFF860 /* ParentTabBarModuleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParentTabBarModuleViewController.storyboard; sourceTree = "<group>"; };
+		E66369D222417C6C00CFF860 /* TodayModuleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayModuleViewController.storyboard; sourceTree = "<group>"; };
+		E66369D422417D1C00CFF860 /* ForecastModuleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForecastModuleViewController.storyboard; sourceTree = "<group>"; };
+		E66369D62241809700CFF860 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E66369D8224187F000CFF860 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		E66369DB2241883900CFF860 /* WeatherObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherObservable.swift; sourceTree = "<group>"; };
+		E66369DD224193D100CFF860 /* WeathermanViewController+WeatherSubscribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeathermanViewController+WeatherSubscribable.swift"; sourceTree = "<group>"; };
+		E66369DF22419A4100CFF860 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		E66369E122419A4E00CFF860 /* DayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeather.swift; sourceTree = "<group>"; };
+		E66369E322419C3F00CFF860 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		F58BCDBF46C847EDA68A67E8 /* ForecastModuleViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModuleViewOutput.swift; sourceTree = "<group>"; };
 		F6217A15E1D7DD65C171225F /* ForecastModuleConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModuleConfigurator.swift; sourceTree = "<group>"; };
 		FDF6C2BB1BBA518E283A4B4B /* ForecastModuleViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModuleViewInput.swift; sourceTree = "<group>"; };
@@ -96,6 +130,7 @@
 				25FD9453C9C1644F83A33DCA /* TodayModuleViewInput.swift */,
 				9EE1FAC33E3872B95E583A17 /* TodayModuleViewController.swift */,
 				33685C190CE59852F540779D /* TodayModuleViewOutput.swift */,
+				E66369D222417C6C00CFF860 /* TodayModuleViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,10 +148,28 @@
 			isa = PBXGroup;
 			children = (
 				E66369B82241639000CFF860 /* Root */,
+				EFB29D2D3283C4AC377A2E2A /* ParentTabBarModule */,
 				E921DE31616465B1302954F8 /* TodayModule */,
 				1C213318721DCFA3ADB32003 /* ForecastModule */,
 			);
 			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		5294AAA67AC0CA0300E1DE13 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0ABD75DD5D75D537E570EA17 /* ParentTabBarModulePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		90C4574F99B4152E852B7CD5 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				3D6BA7C80A096D926DB16379 /* ParentTabBarModuleInitializer.swift */,
+				786CAE7BEE2F3B8AE33141A8 /* ParentTabBarModuleConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 		9F2C2E0FC427CAEC95905DA6 /* Presenter */ = {
@@ -151,6 +204,7 @@
 				FDF6C2BB1BBA518E283A4B4B /* ForecastModuleViewInput.swift */,
 				964FCC1B717ADA7F4A3B9986 /* ForecastModuleViewController.swift */,
 				F58BCDBF46C847EDA68A67E8 /* ForecastModuleViewOutput.swift */,
+				E66369D422417D1C00CFF860 /* ForecastModuleViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +238,7 @@
 		E60525DE22415685000AB425 /* Weatherman */ = {
 			isa = PBXGroup;
 			children = (
+				E66369DA2241880F00CFF860 /* Protocols */,
 				E66369C122416C1600CFF860 /* Extensions */,
 				E66369B2224162E800CFF860 /* Constants */,
 				E66369B52241632700CFF860 /* Utilities */,
@@ -195,6 +250,7 @@
 				E60525E622415687000AB425 /* Assets.xcassets */,
 				E60525E822415687000AB425 /* LaunchScreen.storyboard */,
 				E66369BE224166B900CFF860 /* R.generated.swift */,
+				E66369D62241809700CFF860 /* GoogleService-Info.plist */,
 				E60525EB22415687000AB425 /* Info.plist */,
 			);
 			path = Weatherman;
@@ -212,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				E66369B32241630100CFF860 /* APIEndpoints.swift */,
+				E66369E322419C3F00CFF860 /* ServiceError.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -238,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				E66369C222416C2600CFF860 /* URLRequest+cURL.swift */,
+				E66369DD224193D100CFF860 /* WeathermanViewController+WeatherSubscribable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,6 +305,8 @@
 			children = (
 				E66369C722416D3C00CFF860 /* APIService.swift */,
 				E66369CC2241736900CFF860 /* LocationService.swift */,
+				E66369CE224175A100CFF860 /* Storage.swift */,
+				E66369D8224187F000CFF860 /* WeatherService.swift */,
 			);
 			path = BusinessLogicLayer;
 			sourceTree = "<group>";
@@ -254,8 +314,18 @@
 		E66369CB2241716600CFF860 /* ModelLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E66369DF22419A4100CFF860 /* CurrentWeather.swift */,
+				E66369E122419A4E00CFF860 /* DayWeather.swift */,
 			);
 			path = ModelLayer;
+			sourceTree = "<group>";
+		};
+		E66369DA2241880F00CFF860 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E66369DB2241883900CFF860 /* WeatherObservable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		E921DE31616465B1302954F8 /* TodayModule */ = {
@@ -266,6 +336,27 @@
 				DE2EDA26A6B9E5A17AAD0E1C /* Presenter */,
 			);
 			path = TodayModule;
+			sourceTree = "<group>";
+		};
+		EA2D95138B2F9E7DD0E791A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3B97CF19E0D2861DA7A1549 /* ParentTabBarModuleViewInput.swift */,
+				82A493FD952FA6B67467506A /* ParentTabBarModuleViewController.swift */,
+				E0C3247548E6F1312193FDA7 /* ParentTabBarModuleViewOutput.swift */,
+				E66369D0224178CA00CFF860 /* ParentTabBarModuleViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFB29D2D3283C4AC377A2E2A /* ParentTabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				90C4574F99B4152E852B7CD5 /* Configurator */,
+				EA2D95138B2F9E7DD0E791A6 /* View */,
+				5294AAA67AC0CA0300E1DE13 /* Presenter */,
+			);
+			path = ParentTabBarModule;
 			sourceTree = "<group>";
 		};
 		FB4C1D1CB93F59E25086CADE /* Frameworks */ = {
@@ -318,7 +409,7 @@
 				};
 			};
 			buildConfigurationList = E60525D722415685000AB425 /* Build configuration list for PBXProject "Weatherman" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -341,7 +432,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E60525EA22415687000AB425 /* LaunchScreen.storyboard in Resources */,
+				E66369D72241809700CFF860 /* GoogleService-Info.plist in Resources */,
+				E66369D322417C6C00CFF860 /* TodayModuleViewController.storyboard in Resources */,
+				E66369D1224178CA00CFF860 /* ParentTabBarModuleViewController.storyboard in Resources */,
 				E60525E722415687000AB425 /* Assets.xcassets in Resources */,
+				E66369D522417D1C00CFF860 /* ForecastModuleViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,12 +506,8 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"$TEMP_DIR/rswift-lastrun",
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 				$SRCROOT/R.generated.swift,
@@ -430,11 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -454,14 +541,20 @@
 				E66369C822416D3C00CFF860 /* APIService.swift in Sources */,
 				E66369CD2241736900CFF860 /* LocationService.swift in Sources */,
 				E60525E022415685000AB425 /* AppDelegate.swift in Sources */,
+				E66369CF224175A100CFF860 /* Storage.swift in Sources */,
 				E66369BC224164F700CFF860 /* WeathermanNavigationController.swift in Sources */,
+				E66369DC2241883900CFF860 /* WeatherObservable.swift in Sources */,
+				E66369E022419A4100CFF860 /* CurrentWeather.swift in Sources */,
 				E61693CE3799A58B9305EF6A /* TodayModuleInitializer.swift in Sources */,
 				5B9BA2501432B77E17D038D9 /* TodayModuleConfigurator.swift in Sources */,
 				5AEA068BAA290BCF5CBB41BD /* TodayModuleViewInput.swift in Sources */,
+				E66369E222419A4E00CFF860 /* DayWeather.swift in Sources */,
 				E66369BF224166B900CFF860 /* R.generated.swift in Sources */,
 				E66369BA224163AE00CFF860 /* WeathermanViewController.swift in Sources */,
 				4C56FFEB8AECF5BDFB4BD667 /* TodayModuleViewController.swift in Sources */,
+				E66369E422419C3F00CFF860 /* ServiceError.swift in Sources */,
 				30C86FF81CAB9ED254261A37 /* TodayModuleViewOutput.swift in Sources */,
+				E66369D9224187F000CFF860 /* WeatherService.swift in Sources */,
 				60CB01DB3658F1A9B48F83B6 /* TodayModulePresenter.swift in Sources */,
 				FCD41F3D7C28838488065EAB /* ForecastModuleInitializer.swift in Sources */,
 				E66369B72241633800CFF860 /* Utilities.swift in Sources */,
@@ -470,8 +563,15 @@
 				E66369B42241630100CFF860 /* APIEndpoints.swift in Sources */,
 				58105BB4B83398C06FAB43B2 /* ForecastModuleViewInput.swift in Sources */,
 				42B51190B60CEDB053C6DEB9 /* ForecastModuleViewController.swift in Sources */,
+				E66369DE224193D100CFF860 /* WeathermanViewController+WeatherSubscribable.swift in Sources */,
 				D71C86D1131D4CA78444CEDD /* ForecastModuleViewOutput.swift in Sources */,
 				EE15376E0B9016CCBC4D908B /* ForecastModulePresenter.swift in Sources */,
+				09F7935908FDF2F1F21516F5 /* ParentTabBarModuleInitializer.swift in Sources */,
+				0595A7561A5018DC8698A916 /* ParentTabBarModuleConfigurator.swift in Sources */,
+				72B9A5EBA3E76C0FFCDFD597 /* ParentTabBarModuleViewInput.swift in Sources */,
+				DC4604EB5B098BF1AF4E5682 /* ParentTabBarModuleViewController.swift in Sources */,
+				3A77688A3FF564B4360A7C15 /* ParentTabBarModuleViewOutput.swift in Sources */,
+				F07524CB9A3AD5D7001E0D3F /* ParentTabBarModulePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

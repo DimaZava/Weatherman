@@ -11,10 +11,10 @@ class {{ module_info.name }}Presenter: {{ module_info.name }}ViewOutput {
     weak var view: {{ module_info.name }}ViewInput!
     
     func viewIsReady() {
-
+    	view.setupInitialState()
     }
 
     func onViewWillAppear() {
-    
+    	view.onViewWillAppear()
     }
 }

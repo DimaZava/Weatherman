@@ -6,6 +6,7 @@
 //  Copyright © 2019 Dmitry Zawadsky. All rights reserved.
 //
 
+import Firebase
 import UIKit
 
 protocol ApplicationConfiguratorInput {
@@ -18,6 +19,11 @@ class ApplicationConfigurator {
     }
 
     private func configureFrameworks() {
+        // Configure Firebase services
+        FirebaseApp.configure()
+
+        // Configure weather service
+        WeatherService.sharedInstance.setUp()
     }
 }
 

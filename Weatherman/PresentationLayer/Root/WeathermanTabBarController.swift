@@ -57,7 +57,7 @@ public class WeathermanTabBarController: UITabBarController, NavigationBarDataSo
     //fileprivate var loadingMoreActivityIndicatorView: ActivityIndicatorView?
 
     public override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
 
     public override func viewDidLoad() {

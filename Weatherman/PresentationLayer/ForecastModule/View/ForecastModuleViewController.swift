@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ForecastModuleViewController: UIViewController {
+class ForecastModuleViewController: WeathermanViewController {
 
     // MARK: - Outlets
-	//@IBOutlet weak private var tableView: UITableView!
 
     // MARK: - Constants
 
@@ -19,11 +18,18 @@ class ForecastModuleViewController: UIViewController {
     var output: ForecastModuleViewOutput!
 
     // MARK: - Overrides
+    override var barTitle: String? {
+        return "City_RENAME!!!!".localized()
+    }
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
+    }
+
+    deinit {
+        unsubscribe()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,10 +42,21 @@ class ForecastModuleViewController: UIViewController {
     // MARK: - Other
 }
 
+// NARK: - WeatherObservable
+extension ForecastModuleViewController: WeatherObservable {
+
+    func didObtainWeather() {
+    }
+
+    func onError() {
+    }
+}
+
 // MARK: - ForecastModuleViewInput
 extension ForecastModuleViewController: ForecastModuleViewInput {
 
     func setupInitialState() {
+        subscribe()
     }
 
     func onViewWillAppear() {

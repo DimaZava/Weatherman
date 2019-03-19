@@ -11,8 +11,10 @@ class TodayModulePresenter: TodayModuleViewOutput {
     weak var view: TodayModuleViewInput!
 
     func viewIsReady() {
+        view.setupInitialState()
     }
 
     func onViewWillAppear() {
+        view.onViewWillAppear()
     }
 }
