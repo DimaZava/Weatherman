@@ -6,14 +6,6 @@
 //  Copyright © 2019 Dmitry Zawadsky. All rights reserved.
 //
 
-//
-//  APIService.swift
-//  airlst-study
-//
-//  Created by Dmitry Zawadksy on 22/05/2018.
-//  Copyright © 2018 AirLST. All rights reserved.
-//
-
 import Alamofire
 import Foundation
 

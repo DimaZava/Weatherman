@@ -29,6 +29,7 @@
 		E66369C322416C2600CFF860 /* URLRequest+cURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369C222416C2600CFF860 /* URLRequest+cURL.swift */; };
 		E66369C822416D3C00CFF860 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369C722416D3C00CFF860 /* APIService.swift */; };
 		E66369CA2241704D00CFF860 /* WeathermanTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369C92241704D00CFF860 /* WeathermanTabBarController.swift */; };
+		E66369CD2241736900CFF860 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66369CC2241736900CFF860 /* LocationService.swift */; };
 		EE15376E0B9016CCBC4D908B /* ForecastModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E052332F586EAB3C2B869DB7 /* ForecastModulePresenter.swift */; };
 		FCD41F3D7C28838488065EAB /* ForecastModuleInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82602AE2467F80938CD42835 /* ForecastModuleInitializer.swift */; };
 		FDFAF496BC57775066E757B4 /* ForecastModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6217A15E1D7DD65C171225F /* ForecastModuleConfigurator.swift */; };
@@ -61,6 +62,7 @@
 		E66369C222416C2600CFF860 /* URLRequest+cURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+cURL.swift"; sourceTree = "<group>"; };
 		E66369C722416D3C00CFF860 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E66369C92241704D00CFF860 /* WeathermanTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathermanTabBarController.swift; sourceTree = "<group>"; };
+		E66369CC2241736900CFF860 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F58BCDBF46C847EDA68A67E8 /* ForecastModuleViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModuleViewOutput.swift; sourceTree = "<group>"; };
 		F6217A15E1D7DD65C171225F /* ForecastModuleConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModuleConfigurator.swift; sourceTree = "<group>"; };
 		FDF6C2BB1BBA518E283A4B4B /* ForecastModuleViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForecastModuleViewInput.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				E66369C722416D3C00CFF860 /* APIService.swift */,
+				E66369CC2241736900CFF860 /* LocationService.swift */,
 			);
 			path = BusinessLogicLayer;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				E66369CA2241704D00CFF860 /* WeathermanTabBarController.swift in Sources */,
 				E66369B12241624300CFF860 /* ApplicationConfigurator.swift in Sources */,
 				E66369C822416D3C00CFF860 /* APIService.swift in Sources */,
+				E66369CD2241736900CFF860 /* LocationService.swift in Sources */,
 				E60525E022415685000AB425 /* AppDelegate.swift in Sources */,
 				E66369BC224164F700CFF860 /* WeathermanNavigationController.swift in Sources */,
 				E61693CE3799A58B9305EF6A /* TodayModuleInitializer.swift in Sources */,
