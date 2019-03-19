@@ -1,0 +1,20 @@
+### Headers settings
+company: LetMeCode
+
+### Xcode project settings
+project_name: Weatherman
+xcodeproj_path: Weatherman.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: Weatherman
+
+# The file path for new modules
+project_file_path: Weatherman/PresentationLayer/
+
+# The Xcode group path to new modules
+project_group_path: Weatherman/PresentationLayer/
+
+### Templates
+templates:
+- {name: mvp, local: 'MVP'}
