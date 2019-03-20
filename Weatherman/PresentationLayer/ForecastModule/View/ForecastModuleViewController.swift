@@ -54,6 +54,7 @@ extension ForecastModuleViewController: ForecastWeatherObservable {
     func didObtain(forecast: [DayWeather]) {
         self.forecast = Forecast(with: forecast)
         tableView.reloadData()
+        navigationController?.reloadBarDataSource()
     }
 
     func onError() {

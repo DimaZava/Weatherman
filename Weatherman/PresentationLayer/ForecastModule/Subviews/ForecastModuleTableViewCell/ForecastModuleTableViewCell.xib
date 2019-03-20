@@ -12,30 +12,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastModuleTableViewCell" id="KGk-i7-Jjw" customClass="ForecastModuleTableViewCell" customModule="Weatherman" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="347" height="82"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ForecastModuleTableViewCell" id="KGk-i7-Jjw" customClass="ForecastModuleTableViewCell" customModule="Weatherman" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="77"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="347" height="81.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="347" height="76.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XcX-vY-Dg4">
-                        <rect key="frame" x="8" y="8.5" width="65.5" height="65.5"/>
+                        <rect key="frame" x="8" y="8" width="61" height="60.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="XcX-vY-Dg4" secondAttribute="height" multiplier="1:1" id="aGF-hm-SNA"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMH-JY-hVM">
-                        <rect key="frame" x="81.5" y="8.5" width="58" height="66"/>
+                        <rect key="frame" x="77" y="8" width="44.5" height="60"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq8-rN-6NV">
-                                <rect key="frame" x="8" y="8" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq8-rN-6NV">
+                                <rect key="frame" x="8" y="8" width="28.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cix-ng-Plg">
-                                <rect key="frame" x="8" y="37" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cix-ng-Plg">
+                                <rect key="frame" x="8" y="31" width="28.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Cix-ng-Plg" firstAttribute="top" secondItem="cq8-rN-6NV" secondAttribute="bottom" constant="8" id="0As-cU-Dci"/>
+                            <constraint firstItem="Cix-ng-Plg" firstAttribute="top" secondItem="cq8-rN-6NV" secondAttribute="bottom" constant="2" id="0As-cU-Dci"/>
                             <constraint firstItem="Cix-ng-Plg" firstAttribute="leading" secondItem="kMH-JY-hVM" secondAttribute="leading" constant="8" id="Jfm-3a-lMD"/>
                             <constraint firstAttribute="trailing" secondItem="Cix-ng-Plg" secondAttribute="trailing" constant="8" id="Mkg-KA-bKA"/>
                             <constraint firstItem="cq8-rN-6NV" firstAttribute="top" secondItem="kMH-JY-hVM" secondAttribute="top" constant="8" id="Psu-q9-ErP"/>
@@ -52,10 +52,10 @@
                             <constraint firstAttribute="trailing" secondItem="cq8-rN-6NV" secondAttribute="trailing" constant="8" id="vdK-hb-lYd"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NC-ff-Ub6">
-                        <rect key="frame" x="275" y="25" width="64" height="32.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                        <color key="textColor" red="0.25882352939999997" green="0.69803921570000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NC-ff-Ub6">
+                        <rect key="frame" x="292" y="11.5" width="39" height="53"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="44"/>
+                        <color key="textColor" red="0.005867314524948597" green="0.56361848115921021" blue="0.9994470477104187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -66,7 +66,7 @@
                     <constraint firstItem="1NC-ff-Ub6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kMH-JY-hVM" secondAttribute="trailing" constant="8" id="PXi-2Z-OAm"/>
                     <constraint firstItem="kMH-JY-hVM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="XlA-Ol-8M8"/>
                     <constraint firstAttribute="bottom" secondItem="XcX-vY-Dg4" secondAttribute="bottom" constant="8" id="dXL-kg-Ww2"/>
-                    <constraint firstAttribute="trailing" secondItem="1NC-ff-Ub6" secondAttribute="trailing" constant="8" id="fgN-i2-Ipn"/>
+                    <constraint firstAttribute="trailing" secondItem="1NC-ff-Ub6" secondAttribute="trailing" constant="16" id="fgN-i2-Ipn"/>
                     <constraint firstItem="XcX-vY-Dg4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hvO-Qo-ENl"/>
                     <constraint firstItem="kMH-JY-hVM" firstAttribute="leading" secondItem="XcX-vY-Dg4" secondAttribute="trailing" constant="8" id="kfx-Ya-Tpa"/>
                     <constraint firstItem="XcX-vY-Dg4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xbJ-0b-O6z"/>

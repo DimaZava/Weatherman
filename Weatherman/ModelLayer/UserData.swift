@@ -14,6 +14,7 @@ final class UserData: Encodable {
     let userId = UIDevice.current.identifierForVendor!
     let currentWeather: CurrentWeather
     let currentLocation: [String: CLLocationDegrees]
+    let date = Date()
 
     init(currentWeather: CurrentWeather, currentLocation: CLLocation) {
         self.currentWeather = currentWeather
@@ -26,6 +27,7 @@ final class UserData: Encodable {
         case userId
         case currentWeather
         case currentLocation
+        case date
     }
 
     func encode(to encoder: Encoder) throws {
@@ -33,5 +35,6 @@ final class UserData: Encodable {
         try container.encode(userId, forKey: .userId)
         try container.encode(currentWeather, forKey: .currentWeather)
         try container.encode(currentLocation, forKey: .currentLocation)
+        try container.encode(date, forKey: .date)
     }
 }

@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EJZ-jd-a17">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="85" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="rhJ-3b-LLD">
@@ -44,13 +44,23 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ir-O1-oll" customClass="NavbarUnderlineDashedView" customModule="Weatherman" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="OLE-RL-Fi8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="4ir-O1-oll" firstAttribute="leading" secondItem="iEL-kA-JvD" secondAttribute="leading" id="3a9-bz-hS5"/>
                             <constraint firstItem="EJZ-jd-a17" firstAttribute="leading" secondItem="Bvq-Um-DMj" secondAttribute="leading" id="DKu-D8-9qY"/>
+                            <constraint firstAttribute="trailing" secondItem="4ir-O1-oll" secondAttribute="trailing" id="XuR-kl-Ed2"/>
                             <constraint firstItem="Bvq-Um-DMj" firstAttribute="trailing" secondItem="EJZ-jd-a17" secondAttribute="trailing" id="Ztg-IO-mqk"/>
+                            <constraint firstItem="EJZ-jd-a17" firstAttribute="top" secondItem="4ir-O1-oll" secondAttribute="bottom" id="fWW-7E-sHR"/>
                             <constraint firstItem="Bvq-Um-DMj" firstAttribute="bottom" secondItem="EJZ-jd-a17" secondAttribute="bottom" id="o7R-vk-UvP"/>
-                            <constraint firstItem="EJZ-jd-a17" firstAttribute="top" secondItem="Bvq-Um-DMj" secondAttribute="top" id="uu4-kX-rB4"/>
+                            <constraint firstItem="4ir-O1-oll" firstAttribute="top" secondItem="Bvq-Um-DMj" secondAttribute="top" id="sPB-Jc-Ixk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bvq-Um-DMj"/>
                     </view>
@@ -66,7 +76,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="367" y="-313"/>
+            <point key="canvasLocation" x="365.60000000000002" y="-313.49325337331339"/>
         </scene>
     </scenes>
 </document>

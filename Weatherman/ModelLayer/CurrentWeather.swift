@@ -11,6 +11,7 @@ import ObjectMapper
 
 class CurrentWeather: NSObject, Mappable, Encodable {
 
+    // MARK: - Properties
     var city = "N/A"
     var country = "N/A"
 
@@ -24,7 +25,28 @@ class CurrentWeather: NSObject, Mappable, Encodable {
     var windSpeed: Double?
     var windDegrees: Double?
 
+    var windDirection: String? {
+        guard let windDegrees = windDegrees else { return nil }
+        let value = ((windDegrees / 22.5) + 0.5).floor
+        var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
+        let sideIndex = value.truncatingRemainder(dividingBy: 16).int
+        return arr[sideIndex]
+    }
+
     var icon: String?
+
+    var stringRepresentation: String {
+        return """
+        Hello! I'd like to share with you current weather nearby:
+        \(city), \(country)
+        temperature: \(temperature?.trim(decimalPlaces: 0) ?? "" + "℃ | " + weatherDescription)
+        humidity: \(humidity?.string ?? "N/A" + "%")
+        rain volume: \((rainVolume?.trim(decimalPlaces: 1) ?? "N/A") + " mm")
+        pressure: \((pressure?.trim(decimalPlaces: 0) ?? "N/A") + " hPA")
+        wind speed: \((windSpeed?.string ?? "N/A") + "km/h")
+        wind direction: \(windDirection ?? "N/A")
+        """
+    }
 
     enum CodingKeys: String, CodingKey {
 
@@ -40,6 +62,7 @@ class CurrentWeather: NSObject, Mappable, Encodable {
         case windDegrees = "wind.deg"
     }
 
+    // MARK: - Lifecycle
     required init?(map: Map) {
         super.init()
         mapping(map: map)

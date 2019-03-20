@@ -28,7 +28,7 @@ final class Storage {
                                 Logger.log("Unable to form dictionary from UserData object"); return
             }
 
-            _ = db.collection("users").addDocument(data: dictionary) { err in
+            _ = db.collection("users").document(userData.userId.uuidString).setData(dictionary) { err in
                 if let err = err {
                     Logger.log("Error adding document: \(err)")
                 } else {

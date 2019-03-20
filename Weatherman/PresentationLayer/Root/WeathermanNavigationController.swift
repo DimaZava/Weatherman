@@ -78,6 +78,7 @@ public class WeathermanNavigationController: UINavigationController {
 
         guard let last = self.viewControllers.last else { return }
         last.navigationItem.hidesBackButton = barStyleDataSource.isDefaultBackButtonHidden
+        navigationBar.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 18.0, weight: .light) as Any]
         //        navigationBar.barTintColor = barStyleDataSource.barTintColor
         //        navigationBar.tintColor = barStyleDataSource.tintColor
         //        navigationBar.backgroundColor = barStyleDataSource.navigationBarColor

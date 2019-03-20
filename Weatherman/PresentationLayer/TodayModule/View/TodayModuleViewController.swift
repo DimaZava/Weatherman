@@ -26,6 +26,7 @@ class TodayModuleViewController: WeathermanViewController {
 
     // MARK: - Properties
     var output: TodayModuleViewOutput!
+    var currentWeather: CurrentWeather?
 
     // MARK: - Overrides
     override var barTitle: String? {
@@ -48,21 +49,26 @@ class TodayModuleViewController: WeathermanViewController {
     }
 
     // MARK: - Actions
-    @IBAction private func shareButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func shareButtonTouchUpInside(_ button: UIButton) {
+        guard let currentWeather = self.currentWeather else { return }
+        presentShareController(sourceView: button,
+                               text: currentWeather.stringRepresentation,
+                               image: weatherIconImageView.image)
     }
 
     // MARK: - Other
     func configureView(for currentWeather: CurrentWeather) {
+        self.currentWeather = currentWeather
         weatherIconImageView.kf.setImage(with: currentWeather.icon?.url)
-        locationLabel.text = currentWeather.country + ", " + currentWeather.city
+        locationLabel.text = currentWeather.city + ", " + currentWeather.country
         temperatureAndDescriptionLabel.text
-            = (currentWeather.temperature?.string ?? "") + " | " + currentWeather.weatherDescription
+            = (currentWeather.temperature?.trim(decimalPlaces: 0) ?? "") + "℃ | " + currentWeather.weatherDescription
         humidityLabel.text = (currentWeather.humidity?.string ?? "N/A") + "%"
         rainLevelLabel.text = (currentWeather.rainVolume?.trim(decimalPlaces: 1) ?? "N/A") + " mm"
         pressureLabel.text = (currentWeather.pressure?.trim(decimalPlaces: 0) ?? "N/A") + " hPA"
         windSpeedLabel.text = (currentWeather.windSpeed?.string ?? "N/A") + "km/h"
         // TODO: - Change degrees to directions
-        windDirectionLabel.text = currentWeather.windDegrees?.trim(decimalPlaces: 2) ?? "N/A"
+        windDirectionLabel.text = currentWeather.windDirection ?? "N/A"
     }
 }
 

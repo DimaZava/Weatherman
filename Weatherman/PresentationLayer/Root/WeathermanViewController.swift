@@ -152,6 +152,80 @@ public class WeathermanViewController: UIViewController, NavigationBarDataSource
         }
     }
 
+    func presentShareController(sourceView: UIAppearance, text: String, image: UIImage?) {
+
+        var shareAll = [text] as [Any]
+        if let image = image {
+            shareAll.append(image)
+        }
+
+        //APPEARANCE WORKAROUND
+        let uiBarButtonAppearance = UIBarButtonItem.appearance()
+        let previousColorNormal = uiBarButtonAppearance.titleTextAttributes(for: .normal)
+        let previousColorHighlighted = uiBarButtonAppearance.titleTextAttributes(for: .highlighted)
+
+        uiBarButtonAppearance.setTitleTextAttributes([.foregroundColor: R.color.primaryBlue()!],
+                                                     for: .normal)
+        uiBarButtonAppearance.setTitleTextAttributes([.foregroundColor: R.color.primaryBlue()!],
+                                                     for: .highlighted)
+
+        let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+        //activityViewController.popoverPresentationController?.sourceView = self.view
+
+        if SwifterSwift.isPad {
+            if let sourceView = sourceView as? UIView {
+                activityViewController.popoverPresentationController?.sourceView = sourceView
+                activityViewController.popoverPresentationController?.sourceRect = sourceView.bounds
+            } else if let sourceBarButtonItem = sourceView as? UIBarButtonItem {
+                activityViewController.popoverPresentationController?.barButtonItem = sourceBarButtonItem
+            }
+        }
+
+        activityViewController.completionWithItemsHandler = { activity, completed, items, error in
+
+            if let previousColorNormal = previousColorNormal?[.foregroundColor],
+                let previousColorHighlighted = previousColorHighlighted?[.foregroundColor] {
+                uiBarButtonAppearance.setTitleTextAttributes([.foregroundColor: previousColorNormal],
+                                                             for: .normal)
+                uiBarButtonAppearance.setTitleTextAttributes([.foregroundColor: previousColorHighlighted],
+                                                             for: .highlighted)
+            }
+
+            if !completed || error != nil {
+                return
+            }
+        }
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+
+    func sharingDescription(for activity: UIActivity.ActivityType?) -> String {
+
+        if let activity = activity {
+
+            switch activity {
+            case UIActivity.ActivityType.airDrop,
+                 UIActivity.ActivityType.copyToPasteboard,
+                 UIActivity.ActivityType.mail,
+                 UIActivity.ActivityType.addToReadingList,
+                 UIActivity.ActivityType.message,
+                 UIActivity.ActivityType.postToFacebook,
+                 UIActivity.ActivityType.postToTwitter,
+                 UIActivity.ActivityType.postToFlickr,
+                 UIActivity.ActivityType.postToTencentWeibo,
+                 UIActivity.ActivityType.postToWeibo,
+                 UIActivity.ActivityType.print,
+                 UIActivity.ActivityType.saveToCameraRoll:
+                return activity.rawValue
+            default:
+                if let lastPartOfActivity = activity.rawValue.split(separator: ".").last {
+                    return String(lastPartOfActivity)
+                }
+            }
+        }
+
+        return ""
+    }
+
     @objc
     func dismissModuleWithAnimation() {
         dismissModule(animated: true)

@@ -17,6 +17,19 @@ class ForecastModuleTableViewCell: UITableViewCell {
     @IBOutlet weak private var weatherDescriptionLabel: UILabel!
     @IBOutlet weak private var temperatureLabel: UILabel!
 
+    var isCustomSelected = false
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        if selected, !isCustomSelected {
+            contentView.borderColor = .blue
+            contentView.borderWidth = 2.0
+            isCustomSelected = true
+        } else {
+            contentView.borderColor = .clear
+            isCustomSelected = false
+        }
+    }
+
     func configure(for dayWeather: DayWeather) {
         weatherIconImageView.kf.setImage(with: dayWeather.icon?.url)
         timeLabel.text = dayWeather.time.timeString(ofStyle: .short)

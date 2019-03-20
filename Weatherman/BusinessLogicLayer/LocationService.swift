@@ -61,9 +61,9 @@ class LocationService: NSObject {
         guard locationServicesAvailable() else { return }
 
         manager?.pausesLocationUpdatesAutomatically = true
-        manager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        manager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
         manager?.activityType = .other
-        manager?.distanceFilter = 5.0
+        //manager?.distanceFilter = 5.0
         manager?.startUpdatingLocation()
     }
 

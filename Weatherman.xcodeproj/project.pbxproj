@@ -16,6 +16,9 @@
 		48199427224240EB00ABF2A3 /* ForecastModuleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48199426224240EB00ABF2A3 /* ForecastModuleTableViewHeader.swift */; };
 		48199429224240F800ABF2A3 /* ForecastModuleTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48199428224240F800ABF2A3 /* ForecastModuleTableViewHeader.xib */; };
 		4819942B22424BE200ABF2A3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4819942A22424BE200ABF2A3 /* UserData.swift */; };
+		4819942F22425FF800ABF2A3 /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4819942E22425FF800ABF2A3 /* DashedView.swift */; };
+		48199431224262CB00ABF2A3 /* NavbarUnderlineDashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48199430224262CB00ABF2A3 /* NavbarUnderlineDashedView.swift */; };
+		48199433224275A200ABF2A3 /* DashedBorderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48199432224275A200ABF2A3 /* DashedBorderedImageView.swift */; };
 		4C56FFEB8AECF5BDFB4BD667 /* TodayModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FAC33E3872B95E583A17 /* TodayModuleViewController.swift */; };
 		58105BB4B83398C06FAB43B2 /* ForecastModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6C2BB1BBA518E283A4B4B /* ForecastModuleViewInput.swift */; };
 		5AEA068BAA290BCF5CBB41BD /* TodayModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD9453C9C1644F83A33DCA /* TodayModuleViewInput.swift */; };
@@ -71,6 +74,9 @@
 		48199426224240EB00ABF2A3 /* ForecastModuleTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModuleTableViewHeader.swift; sourceTree = "<group>"; };
 		48199428224240F800ABF2A3 /* ForecastModuleTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastModuleTableViewHeader.xib; sourceTree = "<group>"; };
 		4819942A22424BE200ABF2A3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		4819942E22425FF800ABF2A3 /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
+		48199430224262CB00ABF2A3 /* NavbarUnderlineDashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarUnderlineDashedView.swift; sourceTree = "<group>"; };
+		48199432224275A200ABF2A3 /* DashedBorderedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedBorderedImageView.swift; sourceTree = "<group>"; };
 		4CB2CBB65AA412BD2455F33D /* Pods-Weatherman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherman.release.xcconfig"; path = "Target Support Files/Pods-Weatherman/Pods-Weatherman.release.xcconfig"; sourceTree = "<group>"; };
 		622EEEE210570A355696D424 /* Pods-Weatherman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherman.debug.xcconfig"; path = "Target Support Files/Pods-Weatherman/Pods-Weatherman.debug.xcconfig"; sourceTree = "<group>"; };
 		69C33E27D5E88D50AB8A9842 /* TodayModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModulePresenter.swift; sourceTree = "<group>"; };
@@ -181,6 +187,16 @@
 			path = ForecastModuleTableViewHeader;
 			sourceTree = "<group>";
 		};
+		4819942D22425FDC00ABF2A3 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				4819942E22425FF800ABF2A3 /* DashedView.swift */,
+				48199430224262CB00ABF2A3 /* NavbarUnderlineDashedView.swift */,
+				48199432224275A200ABF2A3 /* DashedBorderedImageView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		5294AAA67AC0CA0300E1DE13 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +284,7 @@
 				E66369C122416C1600CFF860 /* Extensions */,
 				E66369B2224162E800CFF860 /* Constants */,
 				E66369B52241632700CFF860 /* Utilities */,
+				4819942D22425FDC00ABF2A3 /* CustomViews */,
 				E66369AF224161F900CFF860 /* ApplicationLayer */,
 				42490CE6BE9F44F392B63CD5 /* PresentationLayer */,
 				E66369C622416D0300CFF860 /* BusinessLogicLayer */,
@@ -589,11 +606,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4819942F22425FF800ABF2A3 /* DashedView.swift in Sources */,
 				E66369CA2241704D00CFF860 /* WeathermanTabBarController.swift in Sources */,
 				E66369B12241624300CFF860 /* ApplicationConfigurator.swift in Sources */,
 				E66369C822416D3C00CFF860 /* APIService.swift in Sources */,
 				E66369CD2241736900CFF860 /* LocationService.swift in Sources */,
 				E60525E022415685000AB425 /* AppDelegate.swift in Sources */,
+				48199433224275A200ABF2A3 /* DashedBorderedImageView.swift in Sources */,
 				E66369CF224175A100CFF860 /* Storage.swift in Sources */,
 				E66369ED2241D42300CFF860 /* ForecastModuleTableViewCell.swift in Sources */,
 				E66369BC224164F700CFF860 /* WeathermanNavigationController.swift in Sources */,
@@ -626,6 +645,7 @@
 				E66369E82241D0A100CFF860 /* Double+Extension.swift in Sources */,
 				EE15376E0B9016CCBC4D908B /* ForecastModulePresenter.swift in Sources */,
 				09F7935908FDF2F1F21516F5 /* ParentTabBarModuleInitializer.swift in Sources */,
+				48199431224262CB00ABF2A3 /* NavbarUnderlineDashedView.swift in Sources */,
 				0595A7561A5018DC8698A916 /* ParentTabBarModuleConfigurator.swift in Sources */,
 				72B9A5EBA3E76C0FFCDFD597 /* ParentTabBarModuleViewInput.swift in Sources */,
 				DC4604EB5B098BF1AF4E5682 /* ParentTabBarModuleViewController.swift in Sources */,

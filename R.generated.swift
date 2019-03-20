@@ -16,6 +16,21 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
+  /// This `R.color` struct is generated, and contains static references to 1 colors.
+  struct color {
+    /// Color `primaryBlue`.
+    static let primaryBlue = Rswift.ColorResource(bundle: R.hostingBundle, name: "primaryBlue")
+    
+    /// `UIColor(named: "primaryBlue", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func primaryBlue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.primaryBlue, compatibleWith: traitCollection)
+    }
+    
+    fileprivate init() {}
+  }
+  
   /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `GoogleService-Info.plist`.
@@ -30,14 +45,31 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
+    /// Image `compas`.
+    static let compas = Rswift.ImageResource(bundle: R.hostingBundle, name: "compas")
     /// Image `forecast`.
     static let forecast = Rswift.ImageResource(bundle: R.hostingBundle, name: "forecast")
     /// Image `nav_bar_back`.
     static let nav_bar_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "nav_bar_back")
+    /// Image `pressure`.
+    static let pressure = Rswift.ImageResource(bundle: R.hostingBundle, name: "pressure")
+    /// Image `rainLevel`.
+    static let rainLevel = Rswift.ImageResource(bundle: R.hostingBundle, name: "rainLevel")
+    /// Image `rainy`.
+    static let rainy = Rswift.ImageResource(bundle: R.hostingBundle, name: "rainy")
     /// Image `today`.
     static let today = Rswift.ImageResource(bundle: R.hostingBundle, name: "today")
+    /// Image `unknownWeather`.
+    static let unknownWeather = Rswift.ImageResource(bundle: R.hostingBundle, name: "unknownWeather")
+    /// Image `wind`.
+    static let wind = Rswift.ImageResource(bundle: R.hostingBundle, name: "wind")
+    
+    /// `UIImage(named: "compas", bundle: ..., traitCollection: ...)`
+    static func compas(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.compas, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "forecast", bundle: ..., traitCollection: ...)`
     static func forecast(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -49,9 +81,34 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.nav_bar_back, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "pressure", bundle: ..., traitCollection: ...)`
+    static func pressure(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pressure, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "rainLevel", bundle: ..., traitCollection: ...)`
+    static func rainLevel(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.rainLevel, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "rainy", bundle: ..., traitCollection: ...)`
+    static func rainy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.rainy, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "today", bundle: ..., traitCollection: ...)`
     static func today(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.today, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "unknownWeather", bundle: ..., traitCollection: ...)`
+    static func unknownWeather(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.unknownWeather, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "wind", bundle: ..., traitCollection: ...)`
+    static func wind(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.wind, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -250,7 +307,14 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "compas", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'compas' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "pressure", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pressure' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "rainLevel", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'rainLevel' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "rainy", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'rainy' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "unknownWeather", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'unknownWeather' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "wind", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wind' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
+          if UIKit.UIColor(named: "primaryBlue", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primaryBlue' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
           if UIKit.UIColor(named: "systemRedColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'systemRedColor' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
         }
         if _R.storyboard.todayModuleViewController().todayModuleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'todayModuleViewController' could not be loaded from storyboard 'TodayModuleViewController' as 'TodayModuleViewController'.") }

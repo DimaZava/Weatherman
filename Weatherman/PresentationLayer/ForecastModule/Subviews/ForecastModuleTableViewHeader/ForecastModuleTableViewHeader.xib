@@ -17,14 +17,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFt-RT-OPn">
-                    <rect key="frame" x="8" y="8" width="359" height="60"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="16" y="8" width="351" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.19998735189437866" green="0.20000872015953064" blue="0.19996953010559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstItem="DFt-RT-OPn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="3Ld-2m-P0f"/>
+                <constraint firstItem="DFt-RT-OPn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3Ld-2m-P0f"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DFt-RT-OPn" secondAttribute="bottom" constant="8" id="7bg-Qo-TmP"/>
                 <constraint firstItem="DFt-RT-OPn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="iCD-3z-M19"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DFt-RT-OPn" secondAttribute="trailing" constant="8" id="kOB-NX-4km"/>
