@@ -8,10 +8,12 @@
 
 import CoreLocation
 import Repeat
+import SwifterSwift
 
 protocol LocationServiceDelegate: AnyObject {
 
     func didUpdateLocation(_ location: CLLocation)
+    func onDeniedLocationAccess()
 }
 
 class LocationService: NSObject {
@@ -35,6 +37,27 @@ class LocationService: NSObject {
         })
     }()
 
+    lazy var configuredRestoreAccessAlertController: UIAlertController = {
+
+        let alertController = UIAlertController(title: "Warning",
+                                                message: """
+        Location services are disabled. App can't obtain any information about weather in current location.
+        If you want to receive weather data - proceed to App Settings in order to enable location service.
+        """,
+                                                preferredStyle: .alert)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+        })
+        alertController.addAction(cancelAction)
+
+        let appSettingsAction = UIAlertAction(title: "App Settings", style: .default, handler: { _ in
+            self.proposeToRecoverLocationAccess()
+        })
+        alertController.addAction(appSettingsAction)
+        alertController.preferredAction = appSettingsAction
+        return alertController
+    }()
+
     // MARK: - Lifecycle
     private override init() { }
 
@@ -53,6 +76,12 @@ class LocationService: NSObject {
 
         let authorizationStatus = CLLocationManager.authorizationStatus()
         return CLLocationManager.locationServicesEnabled() && authorizationStatus == .authorizedWhenInUse
+    }
+
+    func proposeToRecoverLocationAccess() {
+        if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+        }
     }
 
     // MARK: - Location
@@ -92,6 +121,10 @@ extension LocationService: CLLocationManagerDelegate {
         if status != .notDetermined {
             if status == .denied {
                 Logger.log("location permission denied")
+                delegate?.onDeniedLocationAccess()
+                if !configuredRestoreAccessAlertController.isBeingPresented {
+                    Connector.presentAlertControllerOnTopMost(alertController: configuredRestoreAccessAlertController)
+                }
             } else {
                 Logger.log("location permission success")
                 //if status == .authorizedAlways {

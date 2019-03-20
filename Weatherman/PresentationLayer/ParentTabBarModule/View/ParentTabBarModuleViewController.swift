@@ -22,6 +22,11 @@ class ParentTabBarModuleViewController: UITabBarController {
         return [R.image.today()!,
                 R.image.forecast()!]
     }()
+    let tabBarItemTitles: [String] = {
+        return ["Today".localized(),
+                "Forecast".localized()
+        ]
+    }()
 
     let tabBarControllerContentControllers: [UIViewController] = {
 
@@ -62,10 +67,11 @@ extension ParentTabBarModuleViewController: ParentTabBarModuleViewInput {
     func setupInitialState() {
 
         viewControllers = tabBarControllerContentControllers
-        let offset: CGFloat = !SwifterSwift.isPad ? 6.0 : 0.0
+        //let offset: CGFloat = !SwifterSwift.isPad ? 6.0 : 0.0 // for Image-less case
         tabBar.items?.forEach({ barItem in
             barItem.image = tabBarItemIcons[tabBar.items!.index(of: barItem)!]
-            barItem.imageInsets = UIEdgeInsets(top: offset, left: 0, bottom: -offset, right: 0)
+            barItem.title = tabBarItemTitles[tabBar.items!.index(of: barItem)!]
+            //barItem.imageInsets = UIEdgeInsets(top: offset, left: 0, bottom: -offset, right: 0)
         })
     }
 

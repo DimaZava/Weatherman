@@ -58,6 +58,7 @@ class TodayModuleViewController: WeathermanViewController {
 
     // MARK: - Other
     func configureView(for currentWeather: CurrentWeather) {
+
         self.currentWeather = currentWeather
         weatherIconImageView.kf.setImage(with: currentWeather.icon?.url)
         locationLabel.text = currentWeather.city + ", " + currentWeather.country
@@ -67,7 +68,6 @@ class TodayModuleViewController: WeathermanViewController {
         rainLevelLabel.text = (currentWeather.rainVolume?.trim(decimalPlaces: 1) ?? "N/A") + " mm"
         pressureLabel.text = (currentWeather.pressure?.trim(decimalPlaces: 0) ?? "N/A") + " hPA"
         windSpeedLabel.text = (currentWeather.windSpeed?.string ?? "N/A") + "km/h"
-        // TODO: - Change degrees to directions
         windDirectionLabel.text = currentWeather.windDirection ?? "N/A"
     }
 }
@@ -94,5 +94,6 @@ extension TodayModuleViewController: TodayModuleViewInput {
     }
 
 	func onError(_ error: Error) {
+        showErrorView(text: error.localizedDescription)
     }
 }

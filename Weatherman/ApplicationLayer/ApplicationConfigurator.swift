@@ -10,7 +10,9 @@ import Firebase
 import UIKit
 
 protocol ApplicationConfiguratorInput {
+
     func configureInitialSettings(with rootViewController: UIViewController?)
+    func trySetupWeatherService()
 }
 
 class ApplicationConfigurator {
@@ -30,8 +32,15 @@ class ApplicationConfigurator {
 extension ApplicationConfigurator: ApplicationConfiguratorInput {
 
     func configureInitialSettings(with rootViewController: UIViewController?) {
-
         configureAppearance()
         configureFrameworks()
+    }
+
+    /// Call if location access has been restored
+    func trySetupWeatherService() {
+        // Configure weather service
+        if !LocationService.sharedInstance.locationServicesAvailable() {
+            WeatherService.sharedInstance.setUp()
+        }
     }
 }

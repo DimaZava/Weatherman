@@ -119,5 +119,6 @@ extension ForecastModuleViewController: ForecastModuleViewInput {
     }
 
 	func onError(_ error: Error) {
+        showErrorView(text: error.localizedDescription)
     }
 }

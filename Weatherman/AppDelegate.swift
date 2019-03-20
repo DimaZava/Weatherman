@@ -12,11 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let applicationConfigurator = ApplicationConfigurator()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        ApplicationConfigurator().configureInitialSettings(with: window?.rootViewController)
+        applicationConfigurator.configureInitialSettings(with: window?.rootViewController)
         return true
     }
 
@@ -43,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the
         // application was previously in the background, optionally refresh the user interface.
+        applicationConfigurator.trySetupWeatherService()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -62,10 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Logger.log("Handling shortcut")
         var succeeded = false
-//        if shortcutItem.type == "" {
-//
-//            succeeded = true
-//        }
+        if shortcutItem.type == "lmc.fast_action.forecast" {
+            Connector.switchToForecastModule()
+            succeeded = true
+        }
         return succeeded
     }
 }

@@ -19,6 +19,7 @@
 		4819942F22425FF800ABF2A3 /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4819942E22425FF800ABF2A3 /* DashedView.swift */; };
 		48199431224262CB00ABF2A3 /* NavbarUnderlineDashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48199430224262CB00ABF2A3 /* NavbarUnderlineDashedView.swift */; };
 		48199433224275A200ABF2A3 /* DashedBorderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48199432224275A200ABF2A3 /* DashedBorderedImageView.swift */; };
+		481994362242868600ABF2A3 /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481994352242868600ABF2A3 /* Connector.swift */; };
 		4C56FFEB8AECF5BDFB4BD667 /* TodayModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FAC33E3872B95E583A17 /* TodayModuleViewController.swift */; };
 		58105BB4B83398C06FAB43B2 /* ForecastModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6C2BB1BBA518E283A4B4B /* ForecastModuleViewInput.swift */; };
 		5AEA068BAA290BCF5CBB41BD /* TodayModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD9453C9C1644F83A33DCA /* TodayModuleViewInput.swift */; };
@@ -77,6 +78,7 @@
 		4819942E22425FF800ABF2A3 /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
 		48199430224262CB00ABF2A3 /* NavbarUnderlineDashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarUnderlineDashedView.swift; sourceTree = "<group>"; };
 		48199432224275A200ABF2A3 /* DashedBorderedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedBorderedImageView.swift; sourceTree = "<group>"; };
+		481994352242868600ABF2A3 /* Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
 		4CB2CBB65AA412BD2455F33D /* Pods-Weatherman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherman.release.xcconfig"; path = "Target Support Files/Pods-Weatherman/Pods-Weatherman.release.xcconfig"; sourceTree = "<group>"; };
 		622EEEE210570A355696D424 /* Pods-Weatherman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherman.debug.xcconfig"; path = "Target Support Files/Pods-Weatherman/Pods-Weatherman.debug.xcconfig"; sourceTree = "<group>"; };
 		69C33E27D5E88D50AB8A9842 /* TodayModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModulePresenter.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				E66369B62241633800CFF860 /* Utilities.swift */,
 				E66369E52241B6C900CFF860 /* ForecastDateTransform.swift */,
+				481994352242868600ABF2A3 /* Connector.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				E66369BF224166B900CFF860 /* R.generated.swift in Sources */,
 				E66369BA224163AE00CFF860 /* WeathermanViewController.swift in Sources */,
 				4C56FFEB8AECF5BDFB4BD667 /* TodayModuleViewController.swift in Sources */,
+				481994362242868600ABF2A3 /* Connector.swift in Sources */,
 				E66369E422419C3F00CFF860 /* ServiceError.swift in Sources */,
 				30C86FF81CAB9ED254261A37 /* TodayModuleViewOutput.swift in Sources */,
 				E66369D9224187F000CFF860 /* WeatherService.swift in Sources */,

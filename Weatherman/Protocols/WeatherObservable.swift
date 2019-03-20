@@ -9,7 +9,7 @@
 import UIKit
 
 protocol WeatherObservable {
-    func onError()
+    func onError(_ error: Error)
 }
 
 protocol CurrentWeatherObservable: WeatherObservable {

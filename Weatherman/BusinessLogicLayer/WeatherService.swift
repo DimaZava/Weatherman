@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import UIKit
 
 class WeatherService {
 
@@ -58,8 +59,12 @@ extension WeatherService: LocationServiceDelegate {
                                     Storage.sharedInstance.add(userData: UserData(currentWeather: currentWeather,
                                                                                   currentLocation: location))
                 },
-                                  failure: { error in
+                                  failure: { [weak self] error in
                                     Logger.log(error)
+                                    guard let self = self else { Logger.log(ServiceError.weakSelfNull); return }
+                                    self.subscribers
+                                        .compactMap { $0 as? WeatherObservable }
+                                        .forEach { $0.onError(error) }
             })
 
         APIService.sharedInstance
@@ -72,8 +77,18 @@ extension WeatherService: LocationServiceDelegate {
                                         .compactMap { $0 as? ForecastWeatherObservable }
                                         .forEach { $0.didObtain(forecast: forecast) }
                 },
-                                   failure: { error in
+                                   failure: { [weak self] error in
                                     Logger.log(error)
+                                    guard let self = self else { Logger.log(ServiceError.weakSelfNull); return }
+                                    self.subscribers
+                                        .compactMap { $0 as? WeatherObservable }
+                                        .forEach { $0.onError(error) }
             })
+    }
+
+    func onDeniedLocationAccess() {
+        self.subscribers
+            .compactMap { $0 as? WeatherObservable }
+            .forEach { $0.onError(ServiceError.locationServiceDisabled) }
     }
 }
