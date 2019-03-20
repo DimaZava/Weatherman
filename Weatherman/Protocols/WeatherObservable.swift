@@ -9,13 +9,18 @@
 import UIKit
 
 protocol WeatherObservable {
-
-    func didObtainWeather()
     func onError()
 }
 
-protocol WeatherSubscribable {
+protocol CurrentWeatherObservable: WeatherObservable {
+    func didObtain(currentWeather: CurrentWeather)
+}
 
+protocol ForecastWeatherObservable: WeatherObservable {
+    func didObtain(forecast: [DayWeather])
+}
+
+protocol WeatherSubscribable {
     func subscribe()
     func unsubscribe()
 }

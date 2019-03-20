@@ -11,11 +11,13 @@ import UIKit
 class ForecastModuleViewController: WeathermanViewController {
 
     // MARK: - Outlets
+    @IBOutlet weak private var tableView: UITableView!
 
     // MARK: - Constants
 
     // MARK: - Properties
     var output: ForecastModuleViewOutput!
+    var forecast = [DayWeather]()
 
     // MARK: - Overrides
     override var barTitle: String? {
@@ -43,12 +45,32 @@ class ForecastModuleViewController: WeathermanViewController {
 }
 
 // NARK: - WeatherObservable
-extension ForecastModuleViewController: WeatherObservable {
+extension ForecastModuleViewController: ForecastWeatherObservable {
 
-    func didObtainWeather() {
+    func didObtain(forecast: [DayWeather]) {
+        Logger.log("didObtain(forecast: [DayWeather])")
+        Logger.log(forecast)
     }
 
     func onError() {
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension ForecastModuleViewController: UITableViewDelegate {
+}
+
+// MARK: - UITableViewDataSource
+extension ForecastModuleViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return forecast.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withClass: ForecastModuleTableViewCell.self, for: indexPath)
+        return cell
     }
 }
 
@@ -57,6 +79,10 @@ extension ForecastModuleViewController: ForecastModuleViewInput {
 
     func setupInitialState() {
         subscribe()
+
+        //tableView.register(R.nib.forecastModuleTableViewCell)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     func onViewWillAppear() {

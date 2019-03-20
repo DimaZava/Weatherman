@@ -13,6 +13,7 @@ target 'Weatherman' do
   pod 'SwiftLint'
   pod 'SwifterSwift'
   pod 'Alamofire'
+  pod 'Kingfisher'
   pod 'Dodo'
 
 end

@@ -57,6 +57,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `ForecastModuleTableViewCell`.
+    static let forecastModuleTableViewCell = _R.nib._ForecastModuleTableViewCell()
+    
+    /// `UINib(name: "ForecastModuleTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.forecastModuleTableViewCell) instead")
+    static func forecastModuleTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.forecastModuleTableViewCell)
+    }
+    
+    static func forecastModuleTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ForecastModuleTableViewCell? {
+      return R.nib.forecastModuleTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ForecastModuleTableViewCell
+    }
+    
+    fileprivate init() {}
+  }
+  
   /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `ForecastModuleViewController`.
@@ -107,6 +125,21 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
+  }
+  
+  struct nib {
+    struct _ForecastModuleTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ForecastModuleTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ForecastModuleTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ForecastModuleTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
   }
   
   struct storyboard: Rswift.Validatable {
@@ -184,6 +217,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if #available(iOS 11.0, *) {
+          if UIKit.UIColor(named: "systemRedColor", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'systemRedColor' is used in storyboard 'TodayModuleViewController', but couldn't be loaded.") }
         }
         if _R.storyboard.todayModuleViewController().todayModuleViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'todayModuleViewController' could not be loaded from storyboard 'TodayModuleViewController' as 'TodayModuleViewController'.") }
       }

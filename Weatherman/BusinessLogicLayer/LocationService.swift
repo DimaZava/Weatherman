@@ -49,11 +49,10 @@ class LocationService: NSObject {
 
         guard locationServicesAvailable() else { return }
 
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            //manager?.allowsBackgroundLocationUpdates = true
-            manager?.pausesLocationUpdatesAutomatically = true
-        }
+        manager?.pausesLocationUpdatesAutomatically = true
         manager?.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        manager?.activityType = .other
+        manager?.distanceFilter = 5.0
         manager?.startUpdatingLocation()
     }
 

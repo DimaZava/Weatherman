@@ -41,19 +41,31 @@ class WeatherService {
 extension WeatherService: LocationServiceDelegate {
 
     func didUpdateLocation(_ location: CLLocation) {
+
         APIService.sharedInstance
             .obtainCurrentWeather(for: location,
-                           success: { [weak self] result in
+                                  success: { [weak self] currentWeather in
 
-                            guard let self = self else { Logger.log(ServiceError.weakSelfNull); return }
-                            self.subscribers.forEach { controller in
-                                if let observer = controller as? WeatherObservable {
-                                    observer.didObtainWeather()
-                                }
-                            }
+                                    guard let self = self else { Logger.log(ServiceError.weakSelfNull); return }
+                                    self.subscribers
+                                        .compactMap { $0 as? CurrentWeatherObservable }
+                                        .forEach { $0.didObtain(currentWeather: currentWeather) }
                 },
-                           failure: { error in
-                            Logger.log(error)
+                                  failure: { error in
+                                    Logger.log(error)
+            })
+
+        APIService.sharedInstance
+            .obtainForecastWeather(for: location,
+                                   success: { [weak self] forecast in
+
+                                    guard let self = self else { Logger.log(ServiceError.weakSelfNull); return }
+                                    self.subscribers
+                                        .compactMap { $0 as? ForecastWeatherObservable }
+                                        .forEach { $0.didObtain(forecast: forecast) }
+                },
+                                   failure: { error in
+                                    Logger.log(error)
             })
     }
 }
