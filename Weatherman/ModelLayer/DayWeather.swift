@@ -9,12 +9,12 @@
 import Foundation
 import ObjectMapper
 
-class DayWeather: NSObject, Mappable {
+class DayWeather: ImmutableMappable {
 
-    var time: Date?
-    var weatherDescription = "N/A"
-    var icon: String?
-    var temperature: Int?
+    let time: Date
+    let weatherDescription: String?
+    let icon: String?
+    let temperature: Double
 
     enum CodingKeys: String {
         case time = "dt_txt"
@@ -23,15 +23,16 @@ class DayWeather: NSObject, Mappable {
         case temperature = "main.temp"
     }
 
-    required init?(map: Map) {
+    required init(map: Map) throws {
 
-        super.init()
-        time <- (map[CodingKeys.time.rawValue], ForecastDateTransform())
-        weatherDescription <- map[CodingKeys.weatherDescription.rawValue]
-        icon <- map[CodingKeys.icon.rawValue]
-        temperature <- map[CodingKeys.temperature.rawValue]
-
-        guard time != nil else { return nil }
+        time = try map.value(CodingKeys.time.rawValue, using: ForecastDateTransform())
+        weatherDescription = try? map.value(CodingKeys.weatherDescription.rawValue)
+        if let icon: String = try? map.value(CodingKeys.icon.rawValue) {
+            self.icon = "https://openweathermap.org/img/w/" + icon + ".png"
+        } else {
+            self.icon = nil
+        }
+        temperature = try map.value(CodingKeys.temperature.rawValue)
     }
 
     func mapping(map: Map) {

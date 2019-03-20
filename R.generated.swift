@@ -57,10 +57,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `ForecastModuleTableViewCell`.
     static let forecastModuleTableViewCell = _R.nib._ForecastModuleTableViewCell()
+    /// Nib `ForecastModuleTableViewHeader`.
+    static let forecastModuleTableViewHeader = _R.nib._ForecastModuleTableViewHeader()
     
     /// `UINib(name: "ForecastModuleTableViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.forecastModuleTableViewCell) instead")
@@ -68,8 +70,18 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.forecastModuleTableViewCell)
     }
     
+    /// `UINib(name: "ForecastModuleTableViewHeader", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.forecastModuleTableViewHeader) instead")
+    static func forecastModuleTableViewHeader(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.forecastModuleTableViewHeader)
+    }
+    
     static func forecastModuleTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ForecastModuleTableViewCell? {
       return R.nib.forecastModuleTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ForecastModuleTableViewCell
+    }
+    
+    static func forecastModuleTableViewHeader(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ForecastModuleTableViewHeader? {
+      return R.nib.forecastModuleTableViewHeader.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ForecastModuleTableViewHeader
     }
     
     fileprivate init() {}
@@ -145,6 +157,17 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ForecastModuleTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ForecastModuleTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _ForecastModuleTableViewHeader: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ForecastModuleTableViewHeader"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ForecastModuleTableViewHeader? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ForecastModuleTableViewHeader
       }
       
       fileprivate init() {}

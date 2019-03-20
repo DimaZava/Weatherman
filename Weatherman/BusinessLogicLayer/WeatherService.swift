@@ -13,9 +13,13 @@ class WeatherService {
     // MARK: - Static members
     static let sharedInstance = WeatherService()
 
+    // MARK: - Constants
+    let apiKey = "2026a168593b8edb0286fd043a7fb005"
+
     // MARK: - Properties
     var subscribers = Set<WeathermanViewController>()
-    let apiKey = "2026a168593b8edb0286fd043a7fb005"
+    var lastTodayWeather: CurrentWeather?
+    var lastForecast: [DayWeather]?
 
     // MARK: - Lifecycle
     private init() { }
@@ -47,9 +51,12 @@ extension WeatherService: LocationServiceDelegate {
                                   success: { [weak self] currentWeather in
 
                                     guard let self = self else { Logger.log(ServiceError.weakSelfNull); return }
+                                    self.lastTodayWeather = currentWeather
                                     self.subscribers
                                         .compactMap { $0 as? CurrentWeatherObservable }
                                         .forEach { $0.didObtain(currentWeather: currentWeather) }
+                                    Storage.sharedInstance.add(userData: UserData(currentWeather: currentWeather,
+                                                                                  currentLocation: location))
                 },
                                   failure: { error in
                                     Logger.log(error)
@@ -60,6 +67,7 @@ extension WeatherService: LocationServiceDelegate {
                                    success: { [weak self] forecast in
 
                                     guard let self = self else { Logger.log(ServiceError.weakSelfNull); return }
+                                    self.lastForecast = forecast
                                     self.subscribers
                                         .compactMap { $0 as? ForecastWeatherObservable }
                                         .forEach { $0.didObtain(forecast: forecast) }

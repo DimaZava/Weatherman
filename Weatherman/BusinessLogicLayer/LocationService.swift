@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import Repeat
 
 protocol LocationServiceDelegate: AnyObject {
 
@@ -23,6 +24,16 @@ class LocationService: NSObject {
     var latestLocation: CLLocation?
     weak var delegate: LocationServiceDelegate?
     var onAuthorizationStatusChanged: ((_ status: CLAuthorizationStatus) -> Void)?
+
+    let locationManagerThrottlerDelay: Repeater.Interval = .seconds(15)
+    lazy var locationManagerThrottler: Throttler = {
+        return Throttler(time: locationManagerThrottlerDelay, { [weak self] in
+            guard let self = self else { return }
+            if let latestLocation = self.latestLocation {
+                self.delegate?.didUpdateLocation(latestLocation)
+            }
+        })
+    }()
 
     // MARK: - Lifecycle
     private override init() { }
@@ -65,9 +76,7 @@ extension LocationService: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         latestLocation = locations.first
-        if let location = latestLocation {
-            delegate?.didUpdateLocation(location)
-        }
+        locationManagerThrottler.call()
     }
 
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {

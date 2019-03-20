@@ -17,15 +17,26 @@ final class Storage {
     private init() {
     }
 
-    func add(userData: [String: Any]) {
+    func add(userData: UserData) {
 
-        var ref: DocumentReference?
-        ref = db.collection("users").addDocument(data: userData) { err in
-            if let err = err {
-                Logger.log("Error adding document: \(err)")
-            } else {
-                Logger.log("Document added with ID: \(ref!.documentID)")
+        do {
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try jsonEncoder.encode(userData)
+            guard let dictionary = try JSONSerialization
+                .jsonObject(with: jsonData,
+                            options: .allowFragments) as? [String: Any] else {
+                                Logger.log("Unable to form dictionary from UserData object"); return
             }
+
+            _ = db.collection("users").addDocument(data: dictionary) { err in
+                if let err = err {
+                    Logger.log("Error adding document: \(err)")
+                } else {
+                    //Logger.log("Document added with ID: \(ref!.documentID)")
+                }
+            }
+        } catch {
+            Logger.log(error)
         }
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class CurrentWeather: NSObject, Mappable {
+class CurrentWeather: NSObject, Mappable, Encodable {
 
     var city = "N/A"
     var country = "N/A"
@@ -26,7 +26,7 @@ class CurrentWeather: NSObject, Mappable {
 
     var icon: String?
 
-    enum CodingKeys: String {
+    enum CodingKeys: String, CodingKey {
 
         case cityName = "name"
         case country = "sys.country"
@@ -60,5 +60,17 @@ class CurrentWeather: NSObject, Mappable {
         pressure <- map[CodingKeys.pressure.rawValue]
         windSpeed <- map[CodingKeys.windSpeed.rawValue]
         windDegrees <- map[CodingKeys.windDegrees.rawValue]
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(city, forKey: .cityName)
+        try container.encode(country, forKey: .country)
+        try container.encode(temperature, forKey: .temperature)
+        try container.encode(weatherDescription, forKey: .weatherDescription)
+        try container.encode(humidity, forKey: .humidity)
+        try container.encode(pressure, forKey: .pressure)
+        try container.encode(windSpeed, forKey: .windSpeed)
+        try container.encode(windDegrees, forKey: .windDegrees)
     }
 }

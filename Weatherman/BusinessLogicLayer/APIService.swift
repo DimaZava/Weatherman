@@ -10,6 +10,7 @@ import Alamofire
 import CoreLocation
 import Foundation
 import ObjectMapper
+import Repeat
 
 final class APIService {
 
@@ -146,7 +147,8 @@ final class APIService {
                         //Logger.log(result)
                         if let dict = result as? [String: Any],
                             let list = dict["list"] as? [[String: Any]] {
-                            let forecast = list.compactMap ({ DayWeather(map: Map(mappingType: .fromJSON, JSON: $0)) })
+                            let forecast = list.compactMap ({ try? DayWeather(map: Map(mappingType: .fromJSON,
+                                                                                       JSON: $0)) })
                             success(forecast)
                         }
         }, failure: { error in

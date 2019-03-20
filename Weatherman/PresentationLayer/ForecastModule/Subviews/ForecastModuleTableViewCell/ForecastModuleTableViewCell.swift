@@ -19,8 +19,8 @@ class ForecastModuleTableViewCell: UITableViewCell {
 
     func configure(for dayWeather: DayWeather) {
         weatherIconImageView.kf.setImage(with: dayWeather.icon?.url)
-        timeLabel.text = dayWeather.time?.timeString(ofStyle: .short)
+        timeLabel.text = dayWeather.time.timeString(ofStyle: .short)
         weatherDescriptionLabel.text = dayWeather.weatherDescription
-        temperatureLabel.text = dayWeather.temperature?.string
+        temperatureLabel.text = dayWeather.temperature.trim(decimalPlaces: 0) + "º"
     }
 }

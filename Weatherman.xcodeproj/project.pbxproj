@@ -12,6 +12,10 @@
 		30C86FF81CAB9ED254261A37 /* TodayModuleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33685C190CE59852F540779D /* TodayModuleViewOutput.swift */; };
 		3A77688A3FF564B4360A7C15 /* ParentTabBarModuleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3247548E6F1312193FDA7 /* ParentTabBarModuleViewOutput.swift */; };
 		42B51190B60CEDB053C6DEB9 /* ForecastModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964FCC1B717ADA7F4A3B9986 /* ForecastModuleViewController.swift */; };
+		4819942422422C0A00ABF2A3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4819942322422C0A00ABF2A3 /* Forecast.swift */; };
+		48199427224240EB00ABF2A3 /* ForecastModuleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48199426224240EB00ABF2A3 /* ForecastModuleTableViewHeader.swift */; };
+		48199429224240F800ABF2A3 /* ForecastModuleTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48199428224240F800ABF2A3 /* ForecastModuleTableViewHeader.xib */; };
+		4819942B22424BE200ABF2A3 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4819942A22424BE200ABF2A3 /* UserData.swift */; };
 		4C56FFEB8AECF5BDFB4BD667 /* TodayModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1FAC33E3872B95E583A17 /* TodayModuleViewController.swift */; };
 		58105BB4B83398C06FAB43B2 /* ForecastModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6C2BB1BBA518E283A4B4B /* ForecastModuleViewInput.swift */; };
 		5AEA068BAA290BCF5CBB41BD /* TodayModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD9453C9C1644F83A33DCA /* TodayModuleViewInput.swift */; };
@@ -63,6 +67,10 @@
 		25FD9453C9C1644F83A33DCA /* TodayModuleViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModuleViewInput.swift; sourceTree = "<group>"; };
 		33685C190CE59852F540779D /* TodayModuleViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModuleViewOutput.swift; sourceTree = "<group>"; };
 		3D6BA7C80A096D926DB16379 /* ParentTabBarModuleInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParentTabBarModuleInitializer.swift; sourceTree = "<group>"; };
+		4819942322422C0A00ABF2A3 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		48199426224240EB00ABF2A3 /* ForecastModuleTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModuleTableViewHeader.swift; sourceTree = "<group>"; };
+		48199428224240F800ABF2A3 /* ForecastModuleTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastModuleTableViewHeader.xib; sourceTree = "<group>"; };
+		4819942A22424BE200ABF2A3 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		4CB2CBB65AA412BD2455F33D /* Pods-Weatherman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherman.release.xcconfig"; path = "Target Support Files/Pods-Weatherman/Pods-Weatherman.release.xcconfig"; sourceTree = "<group>"; };
 		622EEEE210570A355696D424 /* Pods-Weatherman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherman.debug.xcconfig"; path = "Target Support Files/Pods-Weatherman/Pods-Weatherman.debug.xcconfig"; sourceTree = "<group>"; };
 		69C33E27D5E88D50AB8A9842 /* TodayModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TodayModulePresenter.swift; sourceTree = "<group>"; };
@@ -162,6 +170,15 @@
 				1C213318721DCFA3ADB32003 /* ForecastModule */,
 			);
 			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		48199425224240C200ABF2A3 /* ForecastModuleTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				48199426224240EB00ABF2A3 /* ForecastModuleTableViewHeader.swift */,
+				48199428224240F800ABF2A3 /* ForecastModuleTableViewHeader.xib */,
+			);
+			path = ForecastModuleTableViewHeader;
 			sourceTree = "<group>";
 		};
 		5294AAA67AC0CA0300E1DE13 /* Presenter */ = {
@@ -327,6 +344,8 @@
 			children = (
 				E66369DF22419A4100CFF860 /* CurrentWeather.swift */,
 				E66369E122419A4E00CFF860 /* DayWeather.swift */,
+				4819942322422C0A00ABF2A3 /* Forecast.swift */,
+				4819942A22424BE200ABF2A3 /* UserData.swift */,
 			);
 			path = ModelLayer;
 			sourceTree = "<group>";
@@ -342,6 +361,7 @@
 		E66369E92241D3F400CFF860 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				48199425224240C200ABF2A3 /* ForecastModuleTableViewHeader */,
 				E66369EA2241D3FC00CFF860 /* ForecastModuleTableViewCell */,
 			);
 			path = Subviews;
@@ -431,7 +451,6 @@
 				TargetAttributes = {
 					E60525DB22415685000AB425 = {
 						CreatedOnToolsVersion = 10.1;
-						DevelopmentTeam = DAWCL7HC5P;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -460,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E66369EE2241D42300CFF860 /* ForecastModuleTableViewCell.xib in Resources */,
+				48199429224240F800ABF2A3 /* ForecastModuleTableViewHeader.xib in Resources */,
 				E60525EA22415687000AB425 /* LaunchScreen.storyboard in Resources */,
 				E66369D72241809700CFF860 /* GoogleService-Info.plist in Resources */,
 				E66369D322417C6C00CFF860 /* TodayModuleViewController.storyboard in Resources */,
@@ -505,6 +525,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -521,6 +542,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -579,6 +601,7 @@
 				E66369E62241B6C900CFF860 /* ForecastDateTransform.swift in Sources */,
 				E66369E022419A4100CFF860 /* CurrentWeather.swift in Sources */,
 				E61693CE3799A58B9305EF6A /* TodayModuleInitializer.swift in Sources */,
+				48199427224240EB00ABF2A3 /* ForecastModuleTableViewHeader.swift in Sources */,
 				5B9BA2501432B77E17D038D9 /* TodayModuleConfigurator.swift in Sources */,
 				5AEA068BAA290BCF5CBB41BD /* TodayModuleViewInput.swift in Sources */,
 				E66369E222419A4E00CFF860 /* DayWeather.swift in Sources */,
@@ -591,10 +614,12 @@
 				60CB01DB3658F1A9B48F83B6 /* TodayModulePresenter.swift in Sources */,
 				FCD41F3D7C28838488065EAB /* ForecastModuleInitializer.swift in Sources */,
 				E66369B72241633800CFF860 /* Utilities.swift in Sources */,
+				4819942422422C0A00ABF2A3 /* Forecast.swift in Sources */,
 				E66369C322416C2600CFF860 /* URLRequest+cURL.swift in Sources */,
 				FDFAF496BC57775066E757B4 /* ForecastModuleConfigurator.swift in Sources */,
 				E66369B42241630100CFF860 /* APIEndpoints.swift in Sources */,
 				58105BB4B83398C06FAB43B2 /* ForecastModuleViewInput.swift in Sources */,
+				4819942B22424BE200ABF2A3 /* UserData.swift in Sources */,
 				42B51190B60CEDB053C6DEB9 /* ForecastModuleViewController.swift in Sources */,
 				E66369DE224193D100CFF860 /* WeathermanViewController+WeatherSubscribable.swift in Sources */,
 				D71C86D1131D4CA78444CEDD /* ForecastModuleViewOutput.swift in Sources */,
@@ -744,7 +769,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DAWCL7HC5P;
+				DEVELOPMENT_TEAM = 57B455Y6G5;
 				INFOPLIST_FILE = Weatherman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LetMeCode.Weatherman;
@@ -760,7 +785,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DAWCL7HC5P;
+				DEVELOPMENT_TEAM = 57B455Y6G5;
 				INFOPLIST_FILE = Weatherman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LetMeCode.Weatherman;

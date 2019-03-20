@@ -15,5 +15,6 @@ target 'Weatherman' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'Dodo'
+  pod 'Repeat'
 
 end
