@@ -75,6 +75,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `ForecastModuleTableViewCell`.
+    static let forecastModuleTableViewCell: Rswift.ReuseIdentifier<ForecastModuleTableViewCell> = Rswift.ReuseIdentifier(identifier: "ForecastModuleTableViewCell")
+    
+    fileprivate init() {}
+  }
+  
   /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `ForecastModuleViewController`.
@@ -128,8 +136,11 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
-    struct _ForecastModuleTableViewCell: Rswift.NibResourceType {
+    struct _ForecastModuleTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ForecastModuleTableViewCell
+      
       let bundle = R.hostingBundle
+      let identifier = "ForecastModuleTableViewCell"
       let name = "ForecastModuleTableViewCell"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ForecastModuleTableViewCell? {

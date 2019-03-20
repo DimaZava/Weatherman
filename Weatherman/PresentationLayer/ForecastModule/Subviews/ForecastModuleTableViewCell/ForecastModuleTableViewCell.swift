@@ -6,19 +6,21 @@
 //  Copyright © 2019 Dmitry Zawadsky. All rights reserved.
 //
 
+import Kingfisher
 import UIKit
 
 class ForecastModuleTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    // MARK: - Outlets
+    @IBOutlet weak private var weatherIconImageView: UIImageView!
+    @IBOutlet weak private var timeLabel: UILabel!
+    @IBOutlet weak private var weatherDescriptionLabel: UILabel!
+    @IBOutlet weak private var temperatureLabel: UILabel!
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(for dayWeather: DayWeather) {
+        weatherIconImageView.kf.setImage(with: dayWeather.icon?.url)
+        timeLabel.text = dayWeather.time?.timeString(ofStyle: .short)
+        weatherDescriptionLabel.text = dayWeather.weatherDescription
+        temperatureLabel.text = dayWeather.temperature?.string
     }
-    
 }

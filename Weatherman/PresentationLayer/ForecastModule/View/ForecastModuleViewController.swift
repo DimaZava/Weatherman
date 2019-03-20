@@ -21,7 +21,8 @@ class ForecastModuleViewController: WeathermanViewController {
 
     // MARK: - Overrides
     override var barTitle: String? {
-        return "City_RENAME!!!!".localized()
+        // TODO: - Change to current city name
+        return "City".localized()
     }
 
     // MARK: - Lifecycle
@@ -48,8 +49,8 @@ class ForecastModuleViewController: WeathermanViewController {
 extension ForecastModuleViewController: ForecastWeatherObservable {
 
     func didObtain(forecast: [DayWeather]) {
-        Logger.log("didObtain(forecast: [DayWeather])")
-        Logger.log(forecast)
+        self.forecast = forecast
+        tableView.reloadData()
     }
 
     func onError() {
@@ -70,6 +71,7 @@ extension ForecastModuleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withClass: ForecastModuleTableViewCell.self, for: indexPath)
+        cell.configure(for: forecast[indexPath.row])
         return cell
     }
 }
@@ -80,7 +82,7 @@ extension ForecastModuleViewController: ForecastModuleViewInput {
     func setupInitialState() {
         subscribe()
 
-        //tableView.register(R.nib.forecastModuleTableViewCell)
+        tableView.register(R.nib.forecastModuleTableViewCell)
         tableView.delegate = self
         tableView.dataSource = self
     }
